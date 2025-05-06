@@ -1,0 +1,55 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "POSTMAIL API",
+  "dateExported": "2025-05-05T00:00:00.000Z",
+  "version": "1.1",
+  "requests": [
+    {
+      "name": "Crear cliente",
+      "method": "POST",
+      "url": "http://localhost:3000/api/cliente",
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"nombre\": \"Carlos\",\n  \"plan\": 2\n}"
+      }
+    },
+    {
+      "name": "Listar clientes",
+      "method": "GET",
+      "url": "http://localhost:3000/api/clientes"
+    },
+    {
+      "name": "Consultar cr\u00e9ditos",
+      "method": "GET",
+      "url": "http://localhost:3000/api/creditos/{{clienteId}}"
+    },
+    {
+      "name": "Crear producto",
+      "method": "POST",
+      "url": "http://localhost:3000/api/producto",
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"descripcion\": \"Cajas medianas\",\n  \"peso\": 9,\n  \"bultos\": 2,\n  \"fechaEntrega\": \"2025-05-10\"\n}"
+      }
+    },
+    {
+      "name": "Crear env\u00edo",
+      "method": "POST",
+      "url": "http://localhost:3000/api/envio",
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"clienteId\": \"{{clienteId}}\",\n  \"productoId\": \"{{productoId}}\",\n  \"nombre\": \"Pedro L\\u00f3pez\",\n  \"direccion\": \"Av. Reforma 123\",\n  \"telefono\": \"5551234567\",\n  \"referencia\": \"Frente a OXXO\",\n  \"observacion\": \"Entregar antes de las 5 PM\"\n}"
+      }
+    },
+    {
+      "name": "Ver env\u00edos por cliente",
+      "method": "GET",
+      "url": "http://localhost:3000/api/envios/{{clienteId}}"
+    },
+    {
+      "name": "Eliminar env\u00edo",
+      "method": "DELETE",
+      "url": "http://localhost:3000/api/envio/{{envioId}}"
+    }
+  ]
+}
